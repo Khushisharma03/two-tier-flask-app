@@ -8,15 +8,15 @@
 
 ```
                         ┌─────────────────────────────────────┐
-                        │          AWS EC2 Cluster             │
-                        │                                      │
-                        │  ┌─────────────┐  ┌─────────────┐    │
-                        │  │ Master Node │  │ Worker Node │    │
-                        │  │ (Control    │  │             │    │
-                        │  │  Plane)     │  │  Flask Pods │    │
-                        │  └─────────────┘  │  MySQL Pod  │    │
-                        │                   └─────────────┘    │
-                        │         Calico CNI Networking        │
+                        │          AWS EC2 Cluster            │
+                        │                                     │
+                        │  ┌─────────────┐  ┌─────────────┐   │
+                        │  │ Master Node │  │ Worker Node │   │
+                        │  │ (Control    │  │             │   │
+                        │  │  Plane)     │  │  Flask Pods │   │
+                        │  └─────────────┘  │  MySQL Pod  │   │
+                        │                   └─────────────┘   │
+                        │         Calico CNI Networking       │
                         └─────────────────────────────────────┘
                                         │
                               ┌─────────┴──────────┐
