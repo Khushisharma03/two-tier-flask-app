@@ -56,10 +56,10 @@ two-tier-flask-app/
 ├── templates/
 │   └── index.html          # Frontend template
 └── k8s/
-    ├── flask-deployment.yaml    # Flask Deployment + replicas
-    ├── flask-service.yaml       # NodePort Service for Flask
-    ├── mysql-deployment.yaml    # MySQL Deployment
-    └── mysql-service.yaml       # ClusterIP Service for MySQL
+    ├── stackboard-deployment.yml    # Flask Deployment + replicas
+    ├── stackboard-svc.yml       # NodePort Service for Flask
+    ├── mysql-deployment.yml    # MySQL Deployment
+    └── mysql-service.yml       # ClusterIP Service for MySQL
 ```
 
 ## Prerequisites
@@ -163,10 +163,10 @@ cd two-tier-flask-app
 ### 2. Apply Kubernetes manifests
 
 ```bash
-kubectl apply -f k8s/mysql-deployment.yaml
-kubectl apply -f k8s/mysql-service.yaml
-kubectl apply -f k8s/flask-deployment.yaml
-kubectl apply -f k8s/flask-service.yaml
+kubectl apply -f k8s/mysql-deployment.yml
+kubectl apply -f k8s/mysql-svc.yml
+kubectl apply -f k8s/stackboard-deployment.yml
+kubectl apply -f k8s/stackboard-svc.yml
 ```
 
 ### 3. Verify deployment
@@ -186,7 +186,7 @@ kubectl get deployments
 
 ```bash
 # Get the NodePort
-kubectl get svc flask-service
+kubectl get svc stackboard-service
 
 # Access via browser
 http://<worker-node-public-ip>:<NodePort>
@@ -196,7 +196,7 @@ http://<worker-node-public-ip>:<NodePort>
 
 ## Environment Variables
 
-The Flask deployment requires these environment variables — make sure they match exactly in your `flask-deployment.yaml`:
+The Flask deployment requires these environment variables — make sure they match exactly in your `stackboard-deployment.yaml`:
 
 | Variable | Description | Example |
 |---|---|---|
