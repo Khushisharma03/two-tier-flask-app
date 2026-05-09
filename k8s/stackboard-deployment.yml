@@ -22,7 +22,7 @@ spec:
               value: mysql
             - name: MYSQL_USER
               value: admin
-            - name: MYSQL_PASS
+            - name: MYSQL_PASSWORD
               value: admin
             - name: MYSQL_DB
               value: mydb
